@@ -32,5 +32,4 @@ jobs:
           pwd='${{ secrets.PWD }}'
           step='${{ secrets.STEP }}'
           echo $PMODE | sed -e 's/\(.\)/\1 /g'
-          echo ${{ secrets.PMODE }}
           python3 main.py ${pmode} ${pkey} ${user} ${pwd} ${step}
