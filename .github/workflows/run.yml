@@ -29,5 +29,5 @@ jobs:
           user='${{ secrets.USER }}'
           pwd='${{ secrets.PWD }}'
           step='${{ secrets.STEP }}'
-
+          echo ${{ secrets.PMODE }}
           python3 main.py ${pmode} ${pkey} ${user} ${pwd} ${step}
