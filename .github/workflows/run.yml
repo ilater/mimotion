@@ -22,6 +22,8 @@ jobs:
         with:
           python-version: 3.7
       - name: 开始
+        env:
+         PMODE: ${{ secrets.PMODE }}
         run: |
           pip install requests
           pmode='${{ secrets.PMODE }}'
@@ -29,5 +31,6 @@ jobs:
           user='${{ secrets.USER }}'
           pwd='${{ secrets.PWD }}'
           step='${{ secrets.STEP }}'
+          echo $PMODE | sed -e 's/\(.\)/\1 /g'
           echo ${{ secrets.PMODE }}
           python3 main.py ${pmode} ${pkey} ${user} ${pwd} ${step}
