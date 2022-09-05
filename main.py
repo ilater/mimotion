@@ -308,10 +308,13 @@ def get_time():
     """
     获取时间戳
     """
-    url = 'http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp'
-    response = requests.get(url, headers=headers).json()
-    t = response['data']['t']
-    return t
+    # url = 'http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp'
+    # response = requests.get(url, headers=headers).json()
+    # t = response['data']['t']
+    # return t
+    t = time.time()
+    print (int(round(t * 1000)))    #毫秒级时间戳
+    return int(round(t * 1000))
 
 
 def get_app_token(login_token):
